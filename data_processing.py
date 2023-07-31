@@ -16,8 +16,17 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import LabelEncoder
 
+
+
+
+
+
+
+
+
+
 def preprocess_data(data1):
-    # Preprocessing for Dealers data
+    # Preprocessing dats
     dealers = data1.get('Dealers')
  
     dealers['Dealer_ID'] = dealers['Dealer_ID'].fillna(0).astype(int)
@@ -41,7 +50,7 @@ def preprocess_data(data1):
 
     customers.rename(columns = {'ZipCode':'zipcode'}, inplace = True)
     
-    # Preprocessing for Claims data
+   
     claims = data1.get('Claims')
     claims['Dealer_ID'] = claims['Dealer_ID'].fillna(0).astype(int)
 
@@ -61,10 +70,8 @@ def preprocess_data(data1):
 
     claims['Part_ID'] = claims['Part_ID'].fillna(0).astype(int)
     
-    # Preprocessing for Parts data
     parts = data1.get('Parts')
-    # ... perform data preprocessing for parts
-    # ...
+   
     parts['Part_ID'] = parts['Part_ID'].fillna(0).astype(int)
 
 
@@ -72,7 +79,6 @@ def preprocess_data(data1):
     parts['Manufacturer_ID'] = parts['Manufacturer_ID'].fillna(0).astype(int)
 
     
-    # Preprocessing for Transactions data
     transactions = data1.get('Transactions')
     transactions['transaction_id'] = transactions['transaction_id'].fillna(0).astype(int)
 
@@ -81,7 +87,6 @@ def preprocess_data(data1):
     transactions['transaction_amount'] = transactions['transaction_amount'].fillna(0).astype(int)
 
     transactions['claim_id'] = transactions['claim_id'].fillna(0).astype(int)
-    # Preprocessing for Vendors data
     vendors = data1.get('Vendors')
     vendors['Vendor_ID'] = vendors['Vendor_ID'].fillna(0).astype(int)
 
@@ -97,6 +102,4 @@ def preprocess_data(data1):
 
 def encode_labels(df):
     labelencoder = LabelEncoder()
-    # ... encode labels in the dataframe
-    # ...
     return df

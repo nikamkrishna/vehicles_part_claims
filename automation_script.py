@@ -19,12 +19,11 @@ def main():
     transactions = encode_labels(transactions)
     vendors = encode_labels(vendors)
 
-    # Perform Use Case 1 analysis
+    # usecase 1 analysis
     usecase_1(claims)
 
     print("__________________________________________________________")
 
-    # Predict parts that may fail according to location, mileage, and age
     predict_fail_parts_by_location(claims, dealers)
 
     print("__________________________________________________________")
